@@ -1,0 +1,11 @@
+{
+  "name": "utest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ."
+  },
+  "author": "Chantatha polsamak (ucode)",
+  "license": "MIT"
+}
