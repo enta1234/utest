@@ -1,0 +1,55 @@
+[
+  {
+    "scenario": "success-query-users",
+    "protocol": "http",
+    "port": 10300,
+    "logs": "",
+    "messages": [
+      {
+        "name": "success-get-users",
+        "method": "GET",
+        "url": "http://localhost:3004/v1/user",
+        "headers": {},
+        "body": {}
+      }
+    ],
+    "sequence": [
+      {
+        "part": "/v1/user",
+        "method": "GET",
+        "code": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "resultCode": "20000",
+          "developerMessage": "success",
+          "data": [{ "name": "chy" }, { "name":"patch" }]
+        }
+      },
+      {
+        "part": "v1/user/:id",
+        "method": "GET",
+        "code": 200,
+        "headers": {
+          "content-type": "application/json"
+        },
+        "body": {
+          "resultCode": "20000",
+          "developerMessage": "success",
+          "data": [{ "name": "chy" }, { "name":"patch" }]
+        }
+      }
+    ],
+    "test": [
+      {
+        "code": 200,
+        "headers":{
+          "content-type": "application/json",
+          "x-policy": "abcd"
+        },
+        "body": {}
+      }
+    ]
+  }
+]
